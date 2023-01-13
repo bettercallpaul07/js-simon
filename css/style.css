@@ -1,0 +1,47 @@
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    background-color: tomato;
+}
+
+#input-tab, #output-tab {
+    background-color: white;
+	font-size: 18px;
+	letter-spacing: 1px;
+	min-height: 200px;
+	width: 100%;
+    border-radius: 20px;
+}
+
+.button {
+    border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 8px 12px;
+	background-color: red;
+    border-radius: 5px;
+
+}
+
+.option-style {
+    border: 2px solid tomato;
+    border-color: tomato;
+    height: 2em;
+
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    border-radius: 50%;
+    text-align: center;
+    color: black;
+    margin: 0 auto;
+}
