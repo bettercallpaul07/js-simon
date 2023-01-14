@@ -36,6 +36,8 @@ let casualNumbers = []
 let chooseNumbers = [];
 let inputNumbers = [];
 let max = 0;
+let score = 0;
+
 
 
 // ------------FUNCTIONS------------
@@ -44,9 +46,30 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+function playgame() {
 
-// ------------RUNCODE------------
+    let i = 0;
+    if (i == 0) {
+    i = 1;
+    let elem = document.getElementById("myBar");
+    let width = 3;
+    let id = setInterval(frame, 300);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }
+    }
+  }
 
+    const choiselevel = document.getElementById('level');
+    const lvl = choiselevel.value
+
+    
 switch(lvl){
     case 'easy':
         max = 10; 
@@ -63,8 +86,6 @@ switch(lvl){
 }
 
 console.log(max)
-
-
 
 
 for (let i = 0; i < 5; i++) {
@@ -87,8 +108,71 @@ for (let i = 0; i < 5; i++) {
     fourth.innerHTML = casualNumbers[3];
     fifth.innerHTML = casualNumbers[4];
     
-
   }
 
 
+  setTimeout(function () {
+
+    first.innerHTML = '?';
+    second.innerHTML = '?';
+    third.innerHTML = '?';
+    fourth.innerHTML = '?';
+    fifth.innerHTML = '?';
+
+
+}, 30000);
+
+setTimeout(function () {
+
+  let firstIn = parseInt(prompt('Bene, ora inserisci il primo numero: '));
+  let secondIn = parseInt(prompt('Ora inserisci il secondo numero: '));
+  let thirdIn = parseInt(prompt('Ora inserisci il terzo numero: '));
+  let fourthIn = parseInt(prompt('Ora inserisci il quarto numero: '));
+  let fifthIn = parseInt(prompt('Ora inserisci il quinto numero: '));
+  
+  control(firstIn, casualNumbers[0], first) 
+  control(secondIn, casualNumbers[1], second) 
+  control(thirdIn, casualNumbers[2], third)
+  control(fourthIn, casualNumbers[3], fourth)
+  control(fifthIn, casualNumbers[4], fifth)
+
+  
+  alert("Il tuo punteggio è di: " + score)
+  
+
+}, 31000);
+
+
+
+}
+
+
+
+function control(inputN, CasualN, box) {
+
+  if(inputN == CasualN) {
+
+      score = score + 1;
+      box.classList.add('right');
+      console.log('punteggio', score)
+
+      first.innerHTML = casualNumbers[0];
+      second.innerHTML = casualNumbers[1];
+      third.innerHTML = casualNumbers[2];
+      fourth.innerHTML = casualNumbers[3];
+      fifth.innerHTML = casualNumbers[4];
+
+
+  } else {
+      box.classList.add('false');
+      
+  }
+
+
+}
+
+
+    
+  
+// ------------RUNCODE------------
 
