@@ -66,9 +66,11 @@ function playgame() {
     }
   }
 
-    const choiselevel = document.getElementById('level');
-    const lvl = choiselevel.value
 
+//Scelta del livello del gioco
+
+  const choiselevel = document.getElementById('level');
+  const lvl = choiselevel.value
     
 switch(lvl){
     case 'easy':
@@ -85,29 +87,17 @@ switch(lvl){
         break;
 }
 
-console.log(max)
-
 
 for (let i = 0; i < 5; i++) {
 
     number = getRandomNumber (1, max);
-
-    console.log(lvl)
-
-
-    console.log(number);
-
     casualNumbers.push(number);
-
-    console.log(casualNumbers);
-
 
     first.innerHTML = casualNumbers[0];
     second.innerHTML = casualNumbers[1];
     third.innerHTML = casualNumbers[2];
     fourth.innerHTML = casualNumbers[3];
     fifth.innerHTML = casualNumbers[4];
-    
   }
 
 
@@ -118,7 +108,6 @@ for (let i = 0; i < 5; i++) {
     third.innerHTML = '?';
     fourth.innerHTML = '?';
     fifth.innerHTML = '?';
-
 
 }, 30000);
 
@@ -141,7 +130,6 @@ setTimeout(function () {
   
 
 }, 31000);
-
 
 
 }
